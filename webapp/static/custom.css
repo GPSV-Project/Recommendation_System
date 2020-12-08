@@ -1,0 +1,10 @@
+
+.card-body, .card {
+  height: 100%;
+}
+
+.bg-info {
+display: flex;
+justify-content: center;
+}
+

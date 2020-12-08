@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>
+    Selected Video: {{query}}
+</h1>
+
+
+<h3>Step 1: Candidate generation</h3>
+
+{{ candidate_df.to_html(classes="table table-bordered table-hover") | safe}}
+
+<h3>Step 2: MMoE based Recommendation</h3>
+
+{{ top_five.to_html(classes="table table-bordered table-hover") | safe}}
+
+
+{% endblock content %}

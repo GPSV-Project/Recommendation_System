@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Select what interests you the most: </h2>
+
+
+<p>
+<form class="" action="/o3b" , method="get">
+
+    Satisfaction:
+    <input type="range" min="0" max="100" name="satisfy">
+
+    Engagement:
+    <input type="range" min="0" max="100" name="engage">
+    <br>
+    <br>
+    <select name="table">
+        {% for colour in table["title"] %}
+        <option value="{{ colour }}">{{ colour }}</option>
+        {% endfor %}
+    </select>
+    <p><input type="submit" value="Select favorite"></p>
+</form>
+</p>
+
+
+{% endblock content %}
