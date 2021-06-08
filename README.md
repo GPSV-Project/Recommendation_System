@@ -19,7 +19,7 @@ NOTE: For all image references and Code references check bottom of the section
 The primary purpose of this project is to create a recommendation engine using cosine similarity for generating candidate list and MMoE (Multi gate Mixture of Experts) for generating ranking. This is followed up with a web application which can use the recommendation engine model to recommend YouTube videos for users.
 
 
-![Model architecture of the ranking system. It consumes user logs as training data, builds Multi-gate Mixture-of-Experts layers to predict two categories of user behaviors, i.e., engagement and satisfaction. It corrects selection bias with a side tower] ()
+![Model architecture of the ranking system. It consumes user logs as training data, builds Multi-gate Mixture-of-Experts layers to predict two categories of user behaviors, i.e., engagement and satisfaction. It corrects selection bias with a side tower] (https://github.com/GPSV-Project/Deep_Learning_Recommendation_System/blob/master/9-%20Images%20and%20Figures/Recommendation%20System-Deployment%20Architecture.png)
 
 ## 2. Objectives:
   
