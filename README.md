@@ -12,7 +12,7 @@
 
 
 NOTE: ADD c++ libraries (check for same in Docker Container first)
-
+NOTE: For all image references and Code references check bottom of the section
 
 ## 1. Purpose:
   
@@ -27,7 +27,7 @@ Following are the three objectives targeted to achieve from this project:
     *	Create a web application for recommending Videos
     *	Colab to train the MMoE model to give scores for ranking
   
-![Single Task recommendation Engine]()
+![Single Task recommendation Engine](https://github.com/GPSV-Project/Deep_Learning_Recommendation_System/blob/master/9-%20Images%20and%20Figures/Single%20Task%20Recommendation%20Engine.jpg)
 
 ## 3. PROBLEM STATEMENT:
   
@@ -37,7 +37,7 @@ Designing and developing a real-world large-scale video recommendation system is
       
     *	There is often implicit bias in the system. For example, a user might have clicked and watched a video simply because it was being ranked high, not because it was the one that the user liked the most. Therefore, models trained using data generated from the current system will be biased, causing a feedback loop effect. 
   
-![Comparison of (a) Shared-Bottom model. (b) One-gate MoE model. (c) Multi-gate MoE model]()
+![Comparison of (a) Shared-Bottom model. (b) One-gate MoE model. (c) Multi-gate MoE model](https://github.com/GPSV-Project/Deep_Learning_Recommendation_System/blob/master/9-%20Images%20and%20Figures/Comparision%20of%20Shared%20Bottom%20Model%20One%20Gate%20model%20Multi%20Gate%20model.png)
 
 ## 4. Dataset:
   
@@ -77,7 +77,7 @@ The video embedding and user embedding is generated using BERT tokenizer and BER
 
 ## 6. Model Architecture:
   
-![Model Architecture]()
+![Model Architecture](https://github.com/GPSV-Project/Deep_Learning_Recommendation_System/blob/master/9-%20Images%20and%20Figures/Model%20Architecture.png)
 In our model we are using the dataset corpus that we have created from previous stage. The dataset is provided to our model for training. As in case of any recommendation engine we have two components:
     *	Candidate List Generation
     *	Generate Ranking
@@ -86,7 +86,7 @@ In our model we are using the dataset corpus that we have created from previous 
 ### 6.1. Candidate List Generation:
 Our video recommendation system uses cosine similarity for multiple candidate generation, each of which captures one aspect of similarity between query from user and candidate video. In many large-scale systems and organizations this algorithm can be replaced with any other state of the art technique used for candidate generation. The model we selected is content based model (rather than collaborative or hybrid based) and hence dependent on features like user clicks and user profile which we have generated in data preprocessing for ease of simulation
 
-![Candidate Generation]()
+![Candidate Generation](https://github.com/GPSV-Project/Deep_Learning_Recommendation_System/blob/master/9-%20Images%20and%20Figures/Recommendation%20System-Candidate%20List.png)
 
 
 #### 6.1.1.	Alternative Approaches
@@ -99,7 +99,7 @@ We chose Cosine similarity for candidate generation simply for the sake of simpl
 ### 6.2. Ranking Generation:
 Since the primary purpose of the project is to create a recommendation engine for a web application for sorting videos using MMoE as a ranking algorithm, hence, we are implementing MMoE (Multi gate Mixture of Experts) as the ranking algorithm. MMoE address and eliminate the challenges of scalability and implicit bias as we will see below
 
-![Multi gate mixture of experts Model architecture. (a) Shallow Tower: It is used to handle Implicit biad. (b) Mixture of experts managed by a gating using two objective functions (Engagement and Satisfaction)]()
+![Multi gate mixture of experts Model architecture. (a) Shallow Tower: It is used to handle Implicit biad. (b) Mixture of experts managed by a gating using two objective functions (Engagement and Satisfaction)](https://github.com/GPSV-Project/Deep_Learning_Recommendation_System/blob/master/9-%20Images%20and%20Figures/6.2.%20Ranking%20Generation.png)
 
 #### 6.2.1.	MMoE Overview
 MMoE structure is a combination of Multi-Layer Perceptrons followed by ReLU activations. There are experts in the MMoE layer which each of them is to learn a different feature of the input data.
