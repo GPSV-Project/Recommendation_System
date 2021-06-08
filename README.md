@@ -11,8 +11,8 @@
 | Varun Bhaseen | Candidate Generation model, MMOE Recommender Model, Train model, Hyperparameter Tuning, Model Evaluation |
 
 
-NOTE: ADD c++ libraries (check for same in Docker Container first)
-NOTE: For all image references and Code references check bottom of the section
+NOTE: ADD c++ libraries (check for same in Docker Container first)  
+NOTE: For all image references and Code references check bottom of the section  
 
 ## 1. Purpose:
   
@@ -108,20 +108,20 @@ The output of the Mixture of Experts (MoE) layer goes to a Gating Network. The o
   
 Since users can have different types of behaviors towards recommended items, our ranking system can support multiple objectives. Each objective is to predict one type of user behavior related to user utility. The objectives are separate into two categories: engagement objectives and satisfaction objectives. 
     
-    *	Engagement objectives capture user behaviors such as clicks and watches. The prediction of these behaviors can be formulated into two types of tasks: binary classification task for behaviors such as clicks, and regression task for behaviors related to time spent. 
+*	Engagement objectives capture user behaviors such as clicks and watches. The prediction of these behaviors can be formulated into two types of tasks: binary classification task for behaviors such as clicks, and regression task for behaviors related to time spent. 
     
-    *	Similarly, for satisfaction objectives, the prediction of behaviors can be related to user satisfactions into either binary classification task or regression task. For example, behavior such as clicking like for a video is formulated as a binary classification task, and behavior such as rating is formulated as regression task. 
+*	Similarly, for satisfaction objectives, the prediction of behaviors can be related to user satisfactions into either binary classification task or regression task. For example, behavior such as clicking like for a video is formulated as a binary classification task, and behavior such as rating is formulated as regression task. 
   
 For binary classification tasks, we are computing cross entropy loss. And for regression tasks, we compute squared loss.
   
 #### 6.2.2.	Shallow Tower Overview
 We are using implicit feedback data for training because explicit feedback data which are ideal for training are not available or are expensive, might not be ideal as there is a usual bias in this data which can increase with feedback. To manage the bias, a shallow tower is introduced into the model architecture. It is addressing the challenge as below:
     
-    *	The shallow tower is trained using features that contribute to the bias like position of the recommendation and tries to predict whether there is a bias component involved in the current instance. 
+*	The shallow tower is trained using features that contribute to the bias like position of the recommendation and tries to predict whether there is a bias component involved in the current instance. 
     
-    *	It is removing the selection bias, takes input related to the selection bias, e.g., ranking order decided by the current system, and outputs a scalar serving as a bias term to the final prediction of the main model.
+*	It is removing the selection bias, takes input related to the selection bias, e.g., ranking order decided by the current system, and outputs a scalar serving as a bias term to the final prediction of the main model.
 
-    *	The Shallow tower factorizes the label in training data in two parts the unbiased user utility learned from the main model, and the estimated propensity score learned from the shallow tower.
+*	The Shallow tower factorizes the label in training data in two parts the unbiased user utility learned from the main model, and the estimated propensity score learned from the shallow tower.
 
 ## 7. Experimentation
 ### 7.1. Challenges:
